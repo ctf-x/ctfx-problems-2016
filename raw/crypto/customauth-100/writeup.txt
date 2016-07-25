@@ -1,0 +1,23 @@
+Uses ECB mode encryption, so just need to construct a cookie that decrypts to something with "admin" true
+
+Can do it by sending JSON encoding requests to set values to true
+
+For ex:
+
+{"username": "a"
+, "password": "r
+", "aaaaaaaaaaaa
+admin": true}
+
+Copy the last encrypted chunk- because it would decrypt to 'admin": true'
+
+and append it to the first 3 encrypted chunks of
+
+{"username": "a"
+, "password": "r
+rrrrrrrrrrrr", "
+wtvr": "a"}
+
+to get something that decrypts to:
+
+{"username": "a", "password": "rrrrrrrrrrrrr", "admin": true}
