@@ -1,0 +1,4 @@
+I learned about cryptography and tried implementing my own authentication. I doubt you can bypass it...
+
+- app.js
+- site url

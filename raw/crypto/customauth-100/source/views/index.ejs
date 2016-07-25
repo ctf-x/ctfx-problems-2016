@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1> Main Page </h1>
+    <p>Welcome to my new website! I made my own secure login system where you can only view my flag if youre an admin.</p>
+
+    <% if(auth) { %>
+      <h2>You are logged in!</h2>
+      <span><b>Username: </b><%= auth.username %></span><br />
+      <% if(auth.admin) { %>
+        <span>You are logged in as admin!</span>
+        <span><b>Flag: </b><code><%= flag %></code></span>
+      <% } else { %>
+        <span>You aren't the admin though, so no flag for you.</span>
+      <% } %>
+      <form method="post" action="/logout">
+        <button id="submit" type="submit">Logout</button>
+      </form>
+    <% } else { %>
+      <h2>Login: </h2>
+      <form method="post" action="/login">
+        <label for="username">Username: </label>
+        <input id="username" name="username" type="text">
+        <br />
+        <label for="password">Password: </label>
+        <input id="password" name="password" type="password">
+        <br />
+        <button id="submit" type="submit">Login</button>
+      </form>
+    <% } %>
+  </body>
+</html>
