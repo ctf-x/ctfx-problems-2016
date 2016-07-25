@@ -1,3 +1,4 @@
 I created this gambling game. Can you win?
 
 - gamble_server.py
+- nc connection
