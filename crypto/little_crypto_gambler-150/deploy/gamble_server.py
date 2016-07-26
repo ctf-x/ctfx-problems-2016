@@ -7,7 +7,7 @@ import signal
 
 from secret1 import FLAG
 
-PORT = 7763
+PORT = 3001
 
 def isInt(x):
     try:
