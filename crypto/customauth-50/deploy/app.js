@@ -78,6 +78,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var server = http.createServer(app).listen(3001, function(){
-  console.log("HTTP server listening on port 3001!");
+var server = http.createServer(app).listen(3000, function(){
+  console.log("HTTP server listening on port 3000!");
 });
