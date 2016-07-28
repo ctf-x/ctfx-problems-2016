@@ -1,4 +1,5 @@
 from secrets import IV
+
 g = lambda a, b, q: (a << b%q) & (2**q-1) | ((a & (2**q-1)) >> (q-(b%q)))
 h = lambda a, b, q: ((a & (2**q-1)) >> b%q) | (a << (q-(b%q)) & (2**q-1))
 
@@ -9,13 +10,9 @@ def c(x):
     ret &= 2**40-1
     return ret
 
-def p(text):
-    val = 5-(len(text) % 5)
-    for _ in xrange(val):
-        text += chr(val)
-    return text
-
 def encrypt(x):
+    y = 5-(len(x)%5)
+    x += ''.join([chr(z) for z in range(y)])
     blahh = [x[i:i+5] for i in range(0, len(x), 5)]
     iv = IV
     ctxt = ""
@@ -26,4 +23,4 @@ def encrypt(x):
         iv = v
     return ctxt
 
-print encrypt(p(raw_input()))
+print encrypt(raw_input())
