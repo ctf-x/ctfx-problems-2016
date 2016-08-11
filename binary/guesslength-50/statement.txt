@@ -1,0 +1,3 @@
+I have this binary, and I think it has a flag inside. Can you help me out?
+
+p.s. I think the program is completely unrelated to the actual flag.
