@@ -59,7 +59,7 @@ int main()
     setbuf(stdout, NULL);
     printf("\nWelcome to the meme posting center!");
     MEME_POST new_meme;
-    new_meme.dankness=0; // i5 n0t v3ry d4nk
+    new_meme.dankness=0; // i5 n0t v3ry d4nk :(
     new_meme.content=(char *)malloc(128);
     printf("\nBefore we start, please give your meme an id");
     char tmp_m3m3_id[8];
@@ -68,9 +68,9 @@ int main()
     while (1)
     {
         printf("\nWhat would you like to do?");
-        printf("\n1) update the id of your meme.");
-        printf("\n2) Update the dankness of your m3m3.");
-        printf("\n3) update the content of your maymay.");
+        printf("\n1) upd4te th3 1d of y0ur meme.");
+        printf("\n2) Updat3 the d4nkn3ss of your m3m3.");
+        printf("\n3) upd4te the c0ntent of your maymay.");
         printf("\n4) pR1nT th3 c0nT3nT of ur memey.");
         printf("\n5) s00p3r s3cr3t meme 0pt10n.");
         printf("\n==> ");
