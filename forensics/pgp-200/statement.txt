@@ -1,1 +1,1 @@
-defund was playing around with pgp. Decrypt his message from this memory dump.
+defund was playing around with pgp keys. Decrypt his message from this memory dump.
