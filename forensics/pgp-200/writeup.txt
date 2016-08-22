@@ -1,0 +1,70 @@
+List the active processes in the memory dump:
+
+./volatility_2.5_mac -f ~/Desktop/dump --profile=Win7SP0x86 pslist
+
+The important ones are these:
+
+0x85bc0ac0 TrueCrypt.exe          2892   1164      4      286      1      0 2016-08-22 20:18:15 UTC+0000                                 
+0x85b02628 notepad.exe            3312   3280      1       61      1      0 2016-08-22 20:19:18 UTC+0000                                 
+0x85af74c8 iexplore.exe           3384   1164     21      492      1      0 2016-08-22 20:19:35 UTC+0000                                 
+0x85212030 iexplore.exe           3576   3384     27      699      1      0 2016-08-22 20:19:38 UTC+0000
+
+Scan for files to find any file containers encrypted with TrueCrypt:
+
+./volatility_2.5_mac -f ~/Desktop/dump --profile=Win7SP0x86 filescan
+
+A file container is in the Desktop/ folder:
+
+0x000000001e3c5500      5      0 R--rw- \Device\HarddiskVolume2\Users\IEUser\Desktop\ripme
+
+Dump this file:
+
+./volatility_2.5_mac -f ~/Desktop/dump --profile=Win7SP0x86 dumpfiles -Q 0x000000001e3c5500 -D ~/Desktop/
+
+Extract the TrueCrypt passphrase from the memory dump:
+
+./volatility_2.5_mac -f ~/Desktop/dump --profile=Win7SP0x86 truecryptpassphrase
+Volatility Foundation Volatility Framework 2.5
+Found at 0x8f974e44 length 32: 7WlsCP6ZA79LAdbdYov4i7HLh165BJcw
+
+Download TrueCrypt online and extract the files from the container, the public and private keys.
+
+Show the internet history:
+
+./volatility_2.5_mac -f ~/Desktop/dump --profile=Win7SP0x86 iehistory
+
+The important link is this:
+
+**************************************************
+Process: 3384 iexplore.exe
+Cache type "URL " at 0x1c15700
+Record length: 0x180
+Location: Visited: IEUser@http://pastebin.com/Cz2KHM52
+Last modified: 2016-08-22 20:25:29 UTC+0000
+Last accessed: 2016-08-22 20:25:29 UTC+0000
+File Offset: 0x180, Data Offset: 0x0, Data Length: 0x98
+**************************************************
+
+Download the encrypted message. A possible passphrase for the pep encryption is the password to the actual computer. Display cached hives:
+
+./volatility_2.5_mac -f ~/Desktop/dump --profile=Win7SP0x86 hivelist
+
+The addresses we need are system and SAM:
+
+0x8f515870 0x18186870 \SystemRoot\System32\Config\SAM
+0x87a1c008 0x1ba38008 \REGISTRY\MACHINE\SYSTEM
+
+Dump the NTLM hashes:
+
+./volatility_2.5_mac -f ~/Desktop/dump --profile=Win7SP0x86 hashdump -y 0x87a1c008 -s 0x8f515870
+
+Use the IEUser hash and crack it online:
+
+IEUser:1000:aad3b435b51404eeaad3b435b51404ee:83c3399edaae7fc957a9041d11810da8:::
+
+The password is 'potato'. Decrypt the pgp message to get the flag.
+
+
+
+
+
