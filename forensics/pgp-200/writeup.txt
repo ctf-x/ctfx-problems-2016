@@ -45,7 +45,8 @@ Last accessed: 2016-08-22 21:43:11 UTC+0000
 File Offset: 0x180, Data Offset: 0x0, Data Length: 0x98
 **************************************************
 
-Download the encrypted message. A possible passphrase for the pgp encryption is the password to the actual computer. Display cached hives:
+Download the encrypted message. A possible passphrase for the pgp encryption is the password to the actual computer. 
+Display cached hives:
 
 ./volatility_2.5_mac -f ~/Desktop/dump --profile=Win7SP0x86 hivelist
 
