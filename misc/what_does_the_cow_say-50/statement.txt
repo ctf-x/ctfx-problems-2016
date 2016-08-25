@@ -1,3 +1,0 @@
-Do you know what the cow says? `nc SERVER PORT`
-
-p.s. Some of those cows look really greedy. Watch out!
