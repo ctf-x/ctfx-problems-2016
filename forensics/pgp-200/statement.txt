@@ -1,1 +1,3 @@
 defund was playing around with pgp keys. Decrypt his message from this memory dump.
+
+link: https://mega.nz/#!TYdC1SKb!7LlYDouQfESCKNKgR34EVD2MOsCyG_4TwRSiaWWFqQY
