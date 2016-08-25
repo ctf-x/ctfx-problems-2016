@@ -1,3 +1,4 @@
 .DS_STORE
 .gdb_history
 peda-session-*.txt
+.idea/
