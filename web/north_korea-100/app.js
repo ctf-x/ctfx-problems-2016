@@ -33,7 +33,7 @@ app.get('/code', function(req, res) {
 });
 
 app.listen(3000, function() {
-	console.log('North korea security measures are now in place!');
+	console.log('North korean security measures are now in place!');
 });
 
 function getClientIp(req) {
