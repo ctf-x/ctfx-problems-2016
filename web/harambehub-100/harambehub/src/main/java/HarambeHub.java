@@ -25,7 +25,7 @@ public class HarambeHub {
                 }
             }
             new User("[Member] " + username, password, realName);
-            return "OK";
+            return "OK: Your username is \"" + "[Member] " + username + "\"";
         });
         get("/name", (req, res) -> {
             String username = req.queryParams("username");
