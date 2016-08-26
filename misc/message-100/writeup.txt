@@ -1,0 +1,2 @@
+Use letter frequencies to determine the subregions to decode the binary string.
+The message contains the flag.
