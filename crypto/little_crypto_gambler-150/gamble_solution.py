@@ -14,12 +14,6 @@ def gcd(a, b):
         return a
     else:
         return gcd(b, a % b)
-def modinv(a, m):
-    g, x, y = xgcd(a, m)
-    if g != 1:
-        raise Exception('modular inverse does not exist! g=%i'%g)
-    else:
-        return x % m
 def solve(s):
     nrand = len(s)
     t = []
