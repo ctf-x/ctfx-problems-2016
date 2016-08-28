@@ -1,0 +1,4 @@
+Split cafebabe.jpg into equally sized digit images. XOR digit images with known
+digit images; the darkest image out of all of them is what the unknown digit image is.
+
+Extract the hex and run it as a java class file to get the flag.

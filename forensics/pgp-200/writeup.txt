@@ -65,6 +65,8 @@ IEUser:1000:aad3b435b51404eeaad3b435b51404ee:83c3399edaae7fc957a9041d11810da8:::
 
 The password is 'potato'. Decrypt the pgp message to get the flag.
 
+Note: you can also directly crack the pgp passphrase with something like John the Ripper.
+
 
 
 
