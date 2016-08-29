@@ -1,0 +1,3 @@
+The scrambler will do the same operations on strings of the same length. Scramble a string with unique characters that is the same length of the ciphertext. Match the corresponding letters and positions with the ciphertext to get the flag.
+
+Another solution is to continue to scramble the ciphertext because the function is cyclic. Run the ciphertext through until you get the flag.
