@@ -1,9 +1,0 @@
-This is a block cipher, with a block size of 5. 
-
-We know that flag starts with 'ctf(', so we can generate 256 possibilities for the Initialization Vector.
-We then reverse the encryption algorithm in z3, and try decrypting the 2nd block with all the IV possibilties. 
-Only 1 results in an ascii printable decryption, so we know the correct IV
-Then simply decrypt each block with that initialization vector
-
-
-see blocky_sol.py for code
