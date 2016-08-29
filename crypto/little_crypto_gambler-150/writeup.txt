@@ -1,3 +1,0 @@
-The pseudorandom numbers are generated using a Linear Congruential Generator. 
-There are several fast ways to crack them based on only a few outputs. 
-Bet 1 6-8 times until you can crack the seed, then calculate the next and bet everything.
