@@ -13,12 +13,12 @@ RUN apt-get install -y socat gcc-multilib
 RUN rm -rf /var/lib/apt/lists/*
 RUN cd /usr/src/pwn/
 
-RUN adduser dat_boinary
-COPY dat_boinary.c /usr/src/pwn/
-RUN gcc -o dat_boinary -m32 -fno-stack-protector dat_boinary.c
-RUN chmod 111 dat_boinary
-RUN rm dat_boinary.c
+RUN adduser guesslength
+COPY guesslength_for_server.c /usr/src/pwn/
+RUN gcc -o guesslength -m32 guesslength_for_server.c
+RUN chmod 111 guesslength
+RUN rm guesslength_for_server.c
 RUN echo $PWD
-USER dat_boinary
-CMD socat tcp-listen:1337,fork,reuseaddr exec:"./dat_boinary"
+USER guesslength
+CMD socat tcp-listen:1338,fork,reuseaddr exec:"./guesslength"
 
