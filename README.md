@@ -1,5 +1,5 @@
-# CTF(X) 2016
-Splash site: http://ctfx.io/
+# CTF(x) 2016
+Splash site: https://ctf-x.github.io
 
 CTF(X) problem statements, files, and writeups
 
